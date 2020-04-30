@@ -33,7 +33,7 @@ To apply custom property values to a dashboard, you need to create an extension.
 
 To register an extension, attach the extension script before the control is rendered and call the `registerExtension` method:
 
-```
+```aspx
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="Content/Extensions/ChartAxisMaxValueExtension.js"></script>
     <script src="Content/Extensions/ChartConstantLinesExtension.js"></script>
