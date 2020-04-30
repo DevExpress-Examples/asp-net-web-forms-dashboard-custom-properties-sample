@@ -1,0 +1,24 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WebFormsDashboardCustomPropertiesSample", "WebFormsDashboardCustomPropertiesSample\WebFormsDashboardCustomPropertiesSample.vbproj", "{F967AC12-2120-4614-AA0D-CAA72EF56E2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F967AC12-2120-4614-AA0D-CAA72EF56E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F967AC12-2120-4614-AA0D-CAA72EF56E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F967AC12-2120-4614-AA0D-CAA72EF56E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F967AC12-2120-4614-AA0D-CAA72EF56E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66846D99-D61B-4576-9EB7-1D7475D107FD}
+	EndGlobalSection
+EndGlobal
