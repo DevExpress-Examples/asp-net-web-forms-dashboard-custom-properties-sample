@@ -82,10 +82,10 @@
         if (args.dashboardItem instanceof Model.ChartItem) {
             args.addSection({
                 title: "Primary Axis Max Value (Custom)",
-                onFieldDataChanged: (e) => {
+                onFieldDataChanged: function (e) {
                     updateFormState(e.component, args.dashboardItem);
                 },
-                onInitialized: (e) => {
+                onInitialized: function (e) {
                     updateFormState(e.component, args.dashboardItem);
                 },
                 items: [
@@ -130,10 +130,9 @@
                         editorOptions: {
                             displayExpr: "text",
                             valueExpr: "value",
-                            items: args.dashboardItem.hiddenMeasures().map(measure => ({
-                                text: measure.name() || measure.dataMember(),
-                                value: measure.uniqueName()
-                            })),
+                            items: args.dashboardItem.hiddenMeasures().map(function (measure) {
+                                return { text: measure.name() || measure.dataMember(), value: measure.uniqueName() }
+                            }),
                         }
                     }
                 ]

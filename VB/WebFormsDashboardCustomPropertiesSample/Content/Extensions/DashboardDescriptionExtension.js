@@ -36,7 +36,7 @@
             title: "Dashboard Description",
             width: '400px',
             height: '300px',
-            contentTemplate: (contentElement) => {
+            contentTemplate: function(contentElement) {
                 dxForm = new DevExpress.ui.dxForm(contentElement, {
                     labelLocation: "top",
                     formData: {
