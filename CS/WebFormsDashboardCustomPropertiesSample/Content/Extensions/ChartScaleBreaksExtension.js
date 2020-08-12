@@ -5,7 +5,7 @@
     var autoScaleBreaksProperty = {
         ownerType: Model.ChartItem,
         propertyName: 'ScaleBreaks',
-        defauleValue: false,
+        defaultValue: false,
         valueType: 'boolean'
     };
 
