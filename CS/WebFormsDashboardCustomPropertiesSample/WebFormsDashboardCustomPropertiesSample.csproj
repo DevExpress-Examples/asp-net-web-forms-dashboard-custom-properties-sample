@@ -95,6 +95,9 @@
     <Content Include="App_Data\Dashboards\ChartScaleBreaks.xml" />
     <Content Include="App_Data\Dashboards\DashboardItemDescription.xml" />
     <Content Include="App_Data\Dashboards\ItemDescription.xml" />
+    <Content Include="App_Data\NWind.mdf" />
+    <Content Include="App_Data\NWind_log.ldf" />
+    <Content Include="App_Data\Sales.xlsx" />
     <Content Include="Content\DashboardThumbnail\dashboard1.png" />
     <Content Include="Content\Extensions\ChartAxisMaxValueExtension.js" />
     <Content Include="Content\Extensions\ChartConstantLinesExtension.js" />
