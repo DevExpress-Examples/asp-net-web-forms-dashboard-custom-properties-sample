@@ -2,7 +2,7 @@
 - [Extensions](./CS/WebFormsDashboardCustomPropertiesSample/Content/Extensions)
 - [Default.aspx](./CS/WebFormsDashboardCustomPropertiesSample/Default.aspx)
 
-# ASP.NET Web Forms Dashboard - Custom Properties
+# Dashboard for Web Forms - Custom Properties
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/260203915/)**
 <!-- run online end -->
