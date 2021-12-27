@@ -14,16 +14,16 @@
             var control = sender.GetDashboardControl();
             control.registerExtension(new DevExpress.Dashboard.DashboardPanelExtension(control));
 
-            control.registerExtension(new ChartScaleBreaksExtension(control))
-            control.registerExtension(new ChartLineOptionsExtension(control))
-            control.registerExtension(new ChartAxisMaxValueExtension(control))
-            control.registerExtension(new ChartConstantLinesExtension(control))
-            control.registerExtension(new ItemDescriptionExtension(control))
-            control.registerExtension(new DashboardDescriptionExtension(control))
+            control.registerExtension(new ChartScaleBreaksExtension(control));
+            control.registerExtension(new ChartLineOptionsExtension(control));
+            control.registerExtension(new ChartAxisMaxValueExtension(control));
+            control.registerExtension(new ChartConstantLinesExtension(control));
+            control.registerExtension(new ItemDescriptionExtension(control));
+            control.registerExtension(new DashboardDescriptionExtension(control));
         }
     </script>
 
-    <dx:ASPxDashboard ID="ASPxDashboard1" runat="server" Width="100%" Height="100%" UseNeutralFilterMode="true" ondataloading="DataLoading">
+    <dx:ASPxDashboard ID="ASPxDashboard1" runat="server" Width="100%" Height="100%" UseNeutralFilterMode="true">
         <ClientSideEvents BeforeRender="onBeforeRender" />
     </dx:ASPxDashboard>
 </asp:Content>

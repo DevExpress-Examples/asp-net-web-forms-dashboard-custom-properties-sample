@@ -33,23 +33,7 @@ Namespace WebFormsDashboardCustomPropertiesSample
 			sqlDataSource.Queries.Add(query)
 			dataSourceStorage.RegisterDataSource("sqlDataSource", sqlDataSource.SaveToXml())
 
-			' Registers an Object data source.
-			Dim objDataSource As New DashboardObjectDataSource("Object Data Source")
-			dataSourceStorage.RegisterDataSource("objDataSource", objDataSource.SaveToXml())
-
-			' Registers an Excel data source.
-			Dim excelDataSource As New DashboardExcelDataSource("Excel Data Source")
-			excelDataSource.FileName = HostingEnvironment.MapPath("~/App_Data/Sales.xlsx")
-			excelDataSource.SourceOptions = New ExcelSourceOptions(New ExcelWorksheetSettings("Sheet1"))
-			dataSourceStorage.RegisterDataSource("excelDataSource", excelDataSource.SaveToXml())
-
 			ASPxDashboard1.SetDataSourceStorage(dataSourceStorage)
-		End Sub
-
-		Protected Sub DataLoading(ByVal sender As Object, ByVal e As DataLoadingWebEventArgs)
-			If e.DataSourceName = "Object Data Source" Then
-				e.Data = Invoices.CreateData()
-			End If
 		End Sub
 	End Class
 End Namespace
