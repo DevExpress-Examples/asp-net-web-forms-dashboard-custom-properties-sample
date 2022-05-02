@@ -43,29 +43,32 @@ To register an extension, attach the extension script before the control is rend
 
 ```aspx
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript">
+        function onBeforeRender(sender) {
+            var control = sender.GetDashboardControl();
+            control.registerExtension(new DevExpress.Dashboard.DashboardPanelExtension(control));
+
+            control.registerExtension(new ChartScaleBreaksExtension(control));
+            control.registerExtension(new ChartLineOptionsExtension(control));
+            control.registerExtension(new ChartAxisMaxValueExtension(control));
+            control.registerExtension(new ChartConstantLinesExtension(control));
+            control.registerExtension(new ItemDescriptionExtension(control));
+            control.registerExtension(new DashboardDescriptionExtension(control));
+            control.registerExtension(new GridHeaderFilterExtension(control));
+        }
+    </script>
+
+    <dx:ASPxDashboard ID="ASPxDashboard1" runat="server" Width="100%" Height="100%" WorkingMode="Viewer" UseNeutralFilterMode="true">
+        <ClientSideEvents BeforeRender="onBeforeRender" />
+    </dx:ASPxDashboard>
+
     <script src="Content/Extensions/ChartAxisMaxValueExtension.js"></script>
     <script src="Content/Extensions/ChartConstantLinesExtension.js"></script>
     <script src="Content/Extensions/ChartLineOptionsExtension.js"></script>
     <script src="Content/Extensions/ChartScaleBreaksExtension.js"></script>
     <script src="Content/Extensions/ItemDescriptionExtension.js"></script>
     <script src="Content/Extensions/DashboardDescriptionExtension.js"></script>
-
-    <script type="text/javascript">
-        function onBeforeRender(sender) {
-            var control = sender.GetDashboardControl();
-            control.registerExtension(new DevExpress.Dashboard.DashboardPanelExtension(control));
-            control.registerExtension(new ChartScaleBreaksExtension(control))
-            control.registerExtension(new ChartLineOptionsExtension(control))
-            control.registerExtension(new ChartAxisMaxValueExtension(control))
-            control.registerExtension(new ChartConstantLinesExtension(control))
-            control.registerExtension(new ItemDescriptionExtension(control))
-            control.registerExtension(new DashboardDescriptionExtension(control))
-        }
-    </script>
-
-    <dx:ASPxDashboard ID="ASPxDashboard1" runat="server" Width="100%" Height="100%" UseNeutralFilterMode="true" ondataloading="DataLoading">
-        <ClientSideEvents BeforeRender="onBeforeRender" />
-    </dx:ASPxDashboard>
+    <script src="Content/Extensions/GridHeaderFilterExtension.js"></script>
 </asp:Content>
 ```
 
@@ -149,6 +152,18 @@ Overview:
 - Shows how to work with complex custom values that are saved as an array.
 - Demonstrates how to bind a custom property to a list of data items.
 - Customizes export to display the result in the exported document.
+
+### GridHeaderFilterExtension
+
+[View Extension](./CS/WebFormsDashboardCustomPropertiesSample/Content/Extensions/GridHeaderFilterExtension.js)
+
+This extension adds Header Filter buttons to the Grid dashboard item.
+
+![](images/GridHeaderFilterExtension.png)
+
+Overview:
+- Adds a custom property for a specific dashboard item (Grid).
+- Integrates a _Header Filter (Custom)_ section, which contains the [ButtonGroup](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxButtonGroup/) widget as an editor, into the _Options_ menu.
 
 ## Documentation
 

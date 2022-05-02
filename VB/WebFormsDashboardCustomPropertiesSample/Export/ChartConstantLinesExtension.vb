@@ -1,4 +1,4 @@
-﻿Imports DevExpress.DashboardCommon
+Imports DevExpress.DashboardCommon
 Imports DevExpress.DashboardCommon.ViewerData
 Imports DevExpress.DashboardWeb
 Imports DevExpress.XtraCharts

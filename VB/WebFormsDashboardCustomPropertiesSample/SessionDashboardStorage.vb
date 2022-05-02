@@ -1,4 +1,5 @@
-﻿Imports System
+Imports Microsoft.VisualBasic
+Imports System
 Imports System.Collections.Generic
 Imports System.Xml.Linq
 Imports DevExpress.DashboardCommon
@@ -8,18 +9,16 @@ Imports System.Web.SessionState
 
 Public Class SessionDashboardStorage
 	Inherits DashboardStorageBase
-
 	Private Const DashboardStorageKey As String = "DashboardStorage"
 
-'INSTANT VB NOTE: The field instance was renamed since Visual Basic does not allow fields to have the same name as other class members:
-	Private Shared instance_Conflict As SessionDashboardStorage = Nothing
+	Private Shared instance_Renamed As SessionDashboardStorage = Nothing
 
 	Public Shared ReadOnly Property Instance() As SessionDashboardStorage
 		Get
-			If instance_Conflict Is Nothing Then
-				instance_Conflict = New SessionDashboardStorage()
+			If instance_Renamed Is Nothing Then
+				instance_Renamed = New SessionDashboardStorage()
 			End If
-			Return instance_Conflict
+			Return instance_Renamed
 		End Get
 	End Property
 
@@ -28,13 +27,13 @@ Public Class SessionDashboardStorage
 			Dim session As HttpSessionState = HttpContext.Current.Session
 			If session IsNot Nothing Then
 'INSTANT VB NOTE: The local variable storage was renamed since Visual Basic will not allow local variables with the same name as their enclosing function or property:
-				Dim storage_Conflict As Dictionary(Of String, XDocument) = TryCast(session(DashboardStorageKey), Dictionary(Of String, XDocument))
-				If storage_Conflict Is Nothing Then
-					storage_Conflict = New Dictionary(Of String, XDocument)()
-					session(DashboardStorageKey) = storage_Conflict
-					Return storage_Conflict
+				Dim storage_Renamed As Dictionary(Of String, XDocument) = TryCast(session(DashboardStorageKey), Dictionary(Of String, XDocument))
+				If storage_Renamed Is Nothing Then
+					storage_Renamed = New Dictionary(Of String, XDocument)()
+					session(DashboardStorageKey) = storage_Renamed
+					Return storage_Renamed
 				End If
-				Return storage_Conflict
+				Return storage_Renamed
 			End If
 			Throw New Exception()
 		End Get
@@ -50,7 +49,7 @@ Public Class SessionDashboardStorage
 	End Function
 	Protected Overrides Function LoadDashboard(ByVal dashboardID As String) As XDocument
 		Dim document As XDocument = Storage(dashboardID)
-		Dim httpContext As HttpContext = System.Web.HttpContext.Current
+		Dim httpContext As HttpContext = HttpContext.Current
 		If dashboardID = "ProductDetails" AndAlso httpContext IsNot Nothing Then
 			Dim dashboard As New Dashboard()
 			dashboard.LoadFromXDocument(document)

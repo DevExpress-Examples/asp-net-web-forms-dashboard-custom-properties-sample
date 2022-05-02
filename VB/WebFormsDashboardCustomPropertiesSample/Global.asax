@@ -1,1 +1,1 @@
-<%@ Application Codebehind="Global.asax.cs" Inherits="WebFormsDashboardCustomPropertiesSample.Global_asax" Language="C#" %>
+<%@ Application Codebehind="Global.asax.vb" Inherits="WebFormsDashboardCustomPropertiesSample.Global_asax" Language="vb" %>

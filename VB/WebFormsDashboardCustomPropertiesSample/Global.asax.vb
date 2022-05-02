@@ -1,4 +1,5 @@
-﻿Imports System
+Imports Microsoft.VisualBasic
+Imports System
 Imports System.IO
 Imports System.Web.Hosting
 Imports System.Xml.Linq
@@ -6,7 +7,6 @@ Imports System.Xml.Linq
 Namespace WebFormsDashboardCustomPropertiesSample
 	Public Class Global_asax
 		Inherits System.Web.HttpApplication
-
 		Private Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
 			System.Web.Routing.RouteTable.Routes.MapPageRoute("defaultRoute", "", "~/Default.aspx")
 			AddHandler DevExpress.Web.ASPxWebControl.CallbackError, AddressOf Application_Error

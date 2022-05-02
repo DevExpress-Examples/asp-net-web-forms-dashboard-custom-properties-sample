@@ -1,4 +1,4 @@
-﻿var DashboardDescriptionExtension = (function() {
+﻿var DashboardDescriptionExtension = (function () {
     var Model = DevExpress.Dashboard.Model;
     var Designer = DevExpress.Dashboard.Designer;
 
@@ -36,7 +36,7 @@
             title: "Dashboard Description",
             width: '400px',
             height: '300px',
-            contentTemplate: function(contentElement) {
+            contentTemplate: function (contentElement) {
                 dxForm = new DevExpress.ui.dxForm(contentElement, {
                     labelLocation: "top",
                     formData: {
@@ -87,17 +87,10 @@
         });
         popup.show();
     }
-    function createMenuItem(dashboardControl) {
-        var menuItem = new Designer.DashboardMenuItem(name, "Description  (Custom)", 9999, 68);
-        menuItem.disabled = ko.computed(function () { return !dashboardControl.dashboard() });
-
-        menuItem.click = function () { showPopup(dashboardControl) };
-        return menuItem;
-    }
 
     // 4. Event Subscription
     function DashboardDescriptionExtension(dashboardControl) {
-        var menuItem = createMenuItem(dashboardControl)
+        var menuItem = createMenuItem();
         this.name = "DashboardDescription",
         this.start = function () {
             var viewerApiExtension = dashboardControl.findExtension('viewer-api');
@@ -118,6 +111,13 @@
             if (toolboxExtension) {
                 toolboxExtension.menuItems.remove(menuItem);
             }
+        };
+        function createMenuItem() {
+            var menuItem = new Designer.DashboardMenuItem(this.name, "Description  (Custom)", 9999, 68);
+            menuItem.disabled = ko.computed(function () { return !dashboardControl.dashboard() });
+
+            menuItem.click = function () { showPopup(dashboardControl) };
+            return menuItem;
         }
     }
     return DashboardDescriptionExtension;
