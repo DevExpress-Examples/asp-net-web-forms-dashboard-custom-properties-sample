@@ -5,9 +5,6 @@
 <!-- default badges end -->
 
 # Dashboard for Web Forms - Custom Properties
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/260203915/)**
-<!-- run online end -->
 
 
 The example shows how to create [custom properties](https://docs.devexpress.com/Dashboard/401702/designer-and-viewer-applications/web-dashboard/client-side-customization/custom-properties) for the Web Dashboard.
